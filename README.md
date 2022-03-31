@@ -3,11 +3,12 @@ jar包存放在resources目录下，sso-sdk-0.2.1.jar
 ![img.png](img.png)
 
 2、下载完成后pom中引入jar包
-<dependency>
-    <groupId>com.bianjie.sso</groupId>
-    <artifactId>sso-sdk-java</artifactId>
-    <version>0.2.1</version>
-</dependency>
+
+    <dependency>
+        <groupId>com.bianjie.sso</groupId>
+        <artifactId>sso-sdk-java</artifactId>
+        <version>0.2.1</version>
+    </dependency>
 
 3、接口调用
 
