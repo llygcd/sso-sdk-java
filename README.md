@@ -15,15 +15,19 @@ jar包存放在resources目录下，sso-sdk-0.2.1.jar
 
     Client client = Client.NewClient(String APPID, String APPSecret);
 参数：
+    
     APPID:应用APPID
+
     APPSecret：下载的应用APPSecret
 
 （1）校验token的方法
 
     String resp = client.verifyToken(String token);
 参数：
+
     token:应用前端传入的cookie/session中存储的token
 返回值：
+
     {
     "code":"001001008",
     "data":{
@@ -38,8 +42,10 @@ jar包存放在resources目录下，sso-sdk-0.2.1.jar
 
     String resp = client.UserInfo(String userNo);
 参数：
+
     userNo：用户编号
 返回值：
+
     {
     "code":"001003010",
     "data":{
@@ -59,9 +65,11 @@ jar包存放在resources目录下，sso-sdk-0.2.1.jar
 
     String resp = client.Logout(String userNo, String appId);  
 参数：
+
     userNo：用户编号
     appId：应用APPID
 返回值：
+
     {
     "code":"001003010",
     "message":"success",
@@ -71,10 +79,16 @@ jar包存放在resources目录下，sso-sdk-0.2.1.jar
 4、SSO系统主动退出登录时，会调用应用系统的回调域， 调用时数据参数是加密的，需要进行解密
 
 解密方法：
-String decrypt = EncryptDecryptUtil.decrypt(String str,String appSecret);
+
+    String decrypt = EncryptDecryptUtil.decrypt(String str,String appSecret);
 参数：
-str： 加密的字符串
-appSecret:下载的应用appSecret
+
+    str： 加密的字符串
+    appSecret:下载的应用appSecret
 
 解密后的数据：
-{"notify_type":"logout","user_no":"1111111111111111111"}
+
+    {
+    "notify_type":"logout",
+    "user_no":"1111111111111111111"
+    }
