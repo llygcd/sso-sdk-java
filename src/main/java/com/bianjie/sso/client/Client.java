@@ -24,11 +24,12 @@ public class Client {
      * 获取Client对象
      *
      * @param appId     应用 appId
-     * @param appSecret 应用appSecret
+     * @param appSecret 应用 appSecret
+     * @param sdkURI    SSO后台调用地址
      * @return
      */
-    public static Client NewClient(String appId, String appSecret) {
-        return new Client(appId, appSecret, Constant.sdkURI);
+    public static Client NewClient(String appId, String appSecret, String sdkURI) {
+        return new Client(appId, appSecret, sdkURI == null || sdkURI == "" ? Constant.sdkURI : sdkURI);
     }
 
     /**

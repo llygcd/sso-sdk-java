@@ -15,12 +15,14 @@
 
 首先需要创建Client对象。
 
-    Client client = Client.NewClient(String APPID, String APPSecret);
+    Client client = Client.NewClient(String APPID, String APPSecret, String sdkURI);
 参数：
     
     APPID:应用APPID
 
-    APPSecret：下载的应用APPSecret
+    APPSecret:下载的应用APPSecret
+
+    sdkURI:SSO接口调用地址
 
 （1）校验token的方法
 
