@@ -37,7 +37,7 @@ public class Client {
      * @param token 应用前端传入的cookie/session中存储的token
      * @return
      */
-    public String verifyToken(String token) {
+    public String VerifyToken(String token) {
         //处理origData
         Map<String, String> origDataMap = new HashMap<>();
         origDataMap.put("token", token);

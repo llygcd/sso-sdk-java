@@ -24,7 +24,7 @@
 
 （1）校验token的方法
 
-    String resp = client.verifyToken(String token);
+    String resp = client.VerifyToken(String token);
 参数：
 
     token:应用前端传入的cookie/session中存储的token
