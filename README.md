@@ -1,5 +1,6 @@
 1、包的下载
-jar包存放在resources目录下，sso-sdk-java-0.2.1.jar
+
+    jar包存放在resources目录下，sso-sdk-java-0.2.1.jar
 
 
 2、下载完成后pom中引入依赖
