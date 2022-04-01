@@ -1,8 +1,8 @@
 1、包的下载
-jar包存放在resources目录下，sso-sdk-0.2.1.jar
-![img.png](img.png)
+jar包存放在resources目录下，sso-sdk-java-0.2.1.jar
 
-2、下载完成后pom中引入jar包
+
+2、下载完成后pom中引入依赖
 
     <dependency>
         <groupId>com.bianjie.sso</groupId>
@@ -30,13 +30,13 @@ jar包存放在resources目录下，sso-sdk-0.2.1.jar
 返回值：
 
     {
-    "code":"001001008",
-    "data":{
-        "active":true,
-        "user_no":"C001200001"
-        },
-    "message":"success",
-    "request_id":"6ad6a0370e618c9424dafcbc75aabca6"
+        "code":"001001008",
+        "data":{
+            "active":true,  #活跃状态
+            "user_no":"C001200001"  #用户编号
+            },
+        "message":"success",
+        "request_id":"6ad6a0370e618c9424dafcbc75aabca6"
     }
 
 （2）获取用户信息的方法
@@ -48,18 +48,18 @@ jar包存放在resources目录下，sso-sdk-0.2.1.jar
 返回值：
 
     {
-    "code":"001003010",
-    "data":{
-        "mobile":"13482490231",
-        "no":"C001200001",
-        "org_name":"QA_质量管理",
-        "org_no":"C0012",
-        "real_name":"QA_测试专用",
-        "role_id":2,
-        "username":"xuyang@bianjie.ai"
-        },
-    "message":"success",
-    "request_id":"6ad6a0370e618c9424dafcbc75aabca6"
+        "code":"001003010",
+        "data":{
+            "mobile":"13482490231", #用户手机号
+            "no":"C001200001",  #用户编号
+            "org_name":"QA_质量管理",   #机构名称
+            "org_no":"C0012",   #机构编号
+            "real_name":"QA_测试专用",  #人员名称
+            "role_id":2,    #角色id
+            "username":"xuyang@bianjie.ai"  #登录用户名
+            },
+        "message":"success",
+        "request_id":"6ad6a0370e618c9424dafcbc75aabca6"
     }
 
 （3）单点退出
@@ -72,9 +72,9 @@ jar包存放在resources目录下，sso-sdk-0.2.1.jar
 返回值：
 
     {
-    "code":"001003010",
-    "message":"success",
-    "request_id":"a3786f98526a3cf839e1f902dc1a733d"
+        "code":"001003010",
+        "message":"success",
+        "request_id":"a3786f98526a3cf839e1f902dc1a733d"
     }
 
 4、SSO系统主动退出登录时，会调用应用系统的回调域， 调用时数据参数是加密的，需要进行解密
@@ -87,9 +87,9 @@ jar包存放在resources目录下，sso-sdk-0.2.1.jar
     str： 加密的字符串
     appSecret:下载的应用appSecret
 
-解密后的数据：
+返回，解密后的数据：
 
     {
-    "notify_type":"logout",
-    "user_no":"1111111111111111111"
+        "notify_type":"logout", #回调类型
+        "user_no":"C001200001" #用户编号
     }

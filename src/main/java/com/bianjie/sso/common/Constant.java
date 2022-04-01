@@ -1,10 +1,10 @@
 package com.bianjie.sso.common;
 
 public class Constant {
-    //appId
+    //测试 appId
     public static String appId = "cs278Y3sZV61zL3qCN8uIiQy9Q17H";
 
-    //密钥
+    //测试 appSecret
     public static String appSecret = "-----BEGIN RSA PRIVATE KEY-----\n" +
             "MIIEpAIBAAKCAQEAoXHvIaJAe/9qQCM2zSYhs9krAbQ/9YAuh/DQovXnDP1LGEwC\n" +
             "lI+9pGFEUe7nbMZpheysVMftVrw7KKIKOTmOWzVIgbL0n2Rd2l/aKAatMxR8Ff58\n" +
@@ -33,6 +33,6 @@ public class Constant {
             "525SRSbbHx4bb3M7OVDqHtKZhpfElku8IacBysF1nEJeCCD8PG4lIw==\n" +
             "-----END RSA PRIVATE KEY-----";
 
-
+    //测试调用地址
     public static String sdkURI = "http://dev.api.sso.cschain.tech";
 }

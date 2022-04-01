@@ -31,7 +31,6 @@ public class EncryptDecryptUtil {
 
     /**
      * RSA私钥解密
-     *
      * @param str        加密字符串
      * @param privateStr 私钥
      * @return 铭文
@@ -50,8 +49,13 @@ public class EncryptDecryptUtil {
         return new String(plainText);
     }
 
-
-    //私钥进行数字签名
+    /**
+     * 私钥进行数字签名
+     * @param text 需要签名的字符串
+     * @param keyStr 私钥字符串
+     * @return
+     * @throws Exception 签名过程中的异常信息
+     */
     public static String privateSignature(String text, String keyStr) throws Exception {
         String resultText = null;
         try {
@@ -77,7 +81,12 @@ public class EncryptDecryptUtil {
         return resultText;
     }
 
-    //PEM转化为私钥PrivateKey
+    /**
+     * PEM转化为私钥PrivateKey
+     * @param keyStr 私钥字符串
+     * @return
+     * @throws Exception 异常
+     */
     private static PrivateKey getRSAPrivateFromPemFormat(String keyStr) throws Exception {
         return (PrivateKey) getKeyFromPEMString(keyStr, data -> new PKCS8EncodedKeySpec(data), (kf, spec) -> {
             try {
@@ -89,7 +98,12 @@ public class EncryptDecryptUtil {
         });
     }
 
-    //PEM转化为公钥PublicKey
+    /**
+     * PEM转化为公钥PublicKey
+     * @param keyStr 公钥字符串
+     * @return
+     * @throws Exception 异常
+     */
     private static PublicKey getRSAPublicFromPemFormat(String keyStr) throws Exception {
         return (PublicKey) getKeyFromPEMString(keyStr, data -> new X509EncodedKeySpec(data), (kf, spec) -> {
             try {

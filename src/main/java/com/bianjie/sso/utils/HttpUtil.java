@@ -64,6 +64,7 @@ public class HttpUtil {
         return null;
     }
 
+    //请求地址参数编码转换
     public static String transfUri(String uri) {
 
         StringBuffer req = new StringBuffer();

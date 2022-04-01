@@ -20,12 +20,23 @@ public class Client {
         SdkURI = sdkURI;
     }
 
-    //获取Client对象，对象中有appId,appSecret
+    /**
+     * 获取Client对象
+     *
+     * @param appId     应用 appId
+     * @param appSecret 应用appSecret
+     * @return
+     */
     public static Client NewClient(String appId, String appSecret) {
         return new Client(appId, appSecret, Constant.sdkURI);
     }
 
-    //校验token
+    /**
+     * 校验token
+     *
+     * @param token 应用前端传入的cookie/session中存储的token
+     * @return
+     */
     public String verifyToken(String token) {
         //处理origData
         Map<String, String> origDataMap = new HashMap<>();
@@ -55,7 +66,12 @@ public class Client {
         return s;
     }
 
-    //获取用户信息
+    /**
+     * 获取用户信息
+     *
+     * @param usrNo 用户编号
+     * @return
+     */
     public String UserInfo(String usrNo) {
         //处理origData
         Map<String, String> origDataMap = new HashMap<>();
@@ -78,6 +94,12 @@ public class Client {
         return s;
     }
 
+    /**
+     * 获取机构下的所有人员信息
+     *
+     * @param orgNo 机构编号
+     * @return
+     */
     public String GetUsers(String orgNo) {
         //处理origData
         Map<String, String> origDataMap = new HashMap<>();
@@ -100,12 +122,18 @@ public class Client {
         return s;
     }
 
-    //单点退出
-    public String Logout(String userNo, String appNo) {
+    /**
+     * 单点退出
+     *
+     * @param userNo 用户编号
+     * @param appId  应用appId
+     * @return
+     */
+    public String Logout(String userNo, String appId) {
         //处理origData
         Map<String, String> origDataMap = new HashMap<>();
         origDataMap.put("user_no", userNo);
-        origDataMap.put("app_no", appNo);
+        origDataMap.put("app_no", appId);
         String origData = JSON.toJSONString(origDataMap);
 
         //处理encrypted
@@ -125,7 +153,12 @@ public class Client {
         return s;
     }
 
-    //查看app状态
+    /**
+     * 查看app状态
+     *
+     * @param redirectUrl 重定向地址
+     * @return
+     */
     public String AppStatus(String redirectUrl) {
         String appUri = "/open/api/v1/apps/" + this.AppId + "/status";
         String uri = this.SdkURI + appUri;
