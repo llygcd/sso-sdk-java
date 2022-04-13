@@ -31,6 +31,7 @@
 
     token:应用前端传入的cookie/session中存储的token
 返回值：
+
 code说明：
 
         001001007：获取用户详情失败（token失效）
@@ -56,6 +57,7 @@ code说明：
 
     userNo：用户编号
 返回值：
+
 code说明：
 
         001003009：失败
@@ -84,6 +86,7 @@ code说明：
     userNo：用户编号
     appId：应用APPID
 返回值：
+
 code说明：
 
         001003009：失败
